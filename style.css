@@ -3,6 +3,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -94,7 +95,7 @@ a {
   padding-left: 53px;
 }
 .hamburger .pull-menu ul li a {
-  color: #6F6E6E;
+  color: #6f6e6e;
 }
 .hamburger input:checked ~ .pull-menu {
   display: flex;
@@ -102,7 +103,7 @@ a {
 }
 
 .promo {
-  background: #F1E4E6;
+  background: #f1e4e6;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -137,6 +138,7 @@ a {
   background: #FFF;
   padding-top: 65px;
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(3, 360px);
   grid-template-rows: 260px 180px;
   gap: 30px;
@@ -181,7 +183,7 @@ a {
   margin-bottom: 6px;
 }
 .featured_items__text {
-  color: #9F9F9F;
+  color: #9f9f9f;
   font-size: 14px;
   font-weight: 400;
   text-align: center;
@@ -189,14 +191,16 @@ a {
 
 .catalog {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 30px;
   padding-top: 48px;
   padding-bottom: 48px;
 }
 .catalog__card {
-  background: #F8F8F8;
+  background: #f8f8f8;
+}
+.catalog__card img {
+  width: 100%;
 }
 .catalog__card__img_wrapper {
   position: relative;
@@ -205,6 +209,7 @@ a {
   justify-content: center;
 }
 .catalog__card .button_add_to_cart {
+  font-family: "Lato";
   display: none;
   position: absolute;
   background-color: transparent;
@@ -237,7 +242,7 @@ a {
   font-weight: 400;
 }
 .catalog__card__text {
-  color: #5D5D5D;
+  color: #5d5d5d;
   font-size: 14px;
   font-weight: 300;
 }
@@ -247,13 +252,14 @@ a {
 }
 
 .button_browse {
+  font-family: "Lato";
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 15px 39px;
   background: #FFF;
-  border: 1px solid #F26376;
-  color: #F26376;
+  border: 1px solid #f26376;
+  color: #f26376;
   font-size: 16px;
   font-weight: 400;
 }
@@ -266,7 +272,6 @@ a {
   background-color: #222224;
   display: flex;
   gap: 30px;
-  margin-top: 95px;
   padding-top: 104px;
   padding-bottom: 104px;
 }
@@ -279,12 +284,12 @@ a {
   gap: 20px;
 }
 .advantages .advantage h4 {
-  color: #FBFBFB;
+  color: #fbfbfb;
   font-size: 19.96px;
   font-weight: 400;
 }
 .advantages .advantage p {
-  color: #FBFBFB;
+  color: #fbfbfb;
   text-align: center;
   font-size: 13.972px;
   font-weight: 300;
@@ -358,8 +363,9 @@ a {
   font-weight: 400;
 }
 .subscribe .form__input {
+  font-family: "Lato";
   display: inline-block;
-  background-color: #E1E1E1;
+  background-color: #e1e1e1;
   opacity: 0.671;
   padding: 16px 64px 16px 22px;
   border-top-left-radius: 50px;
@@ -369,6 +375,7 @@ a {
   outline: 0;
 }
 .subscribe .form__button {
+  font-family: "Lato";
   display: inline-block;
   padding: 16px 22px;
   text-align: center;
@@ -386,7 +393,7 @@ a {
   justify-content: space-between;
   padding-top: 24px;
   padding-bottom: 24px;
-  color: #FBFBFB;
+  color: #fbfbfb;
   font-size: 16px;
   font-weight: 400;
 }
@@ -411,25 +418,25 @@ a {
     padding-bottom: 10px;
     width: 12%;
   }
-  .subcribe {
+  .subscribe {
     margin: 0;
     padding: 0;
     width: 100%;
   }
-  .subcribe .img_back {
+  .subscribe .img_back {
     width: 100%;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  .subcribe__left_right_wrapper {
+  .subscribe__left_right_wrapper {
     gap: 50px;
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .subcribe__left {
+  .subscribe__left {
     gap: 15px;
   }
-  .subcribe__right {
+  .subscribe__right {
     gap: 15px;
   }
 }
@@ -439,10 +446,6 @@ a {
   }
 }
 @media (max-width: 1160px) {
-  .center {
-    padding-left: calc(50% - 512px);
-    padding-right: calc(50% - 512px);
-  }
   .categories {
     grid-template-columns: repeat(3, 320px);
     grid-template-rows: 235px 160px;
@@ -469,11 +472,17 @@ a {
     gap: 10px;
   }
 }
+@media (max-width: 1139px) {
+  .center {
+    padding-left: calc(50% - 500px);
+    padding-right: calc(50% - 500px);
+  }
+}
 @media (max-width: 1024px) {
   /* Стили для планшета */
   .center {
-    padding-left: calc(50% - 367.5px);
-    padding-right: calc(50% - 367.5px);
+    padding-left: calc(50% - 368px);
+    padding-right: calc(50% - 368px);
   }
   .promo {
     padding-left: calc(50% - 386px);
@@ -503,8 +512,6 @@ a {
   }
   .catalog {
     gap: 16px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     padding-top: 73px;
     padding-bottom: 32px;
   }
@@ -514,7 +521,6 @@ a {
     justify-content: center;
     align-items: center;
     gap: 48px;
-    margin-top: 64px;
     padding-top: 48px;
     padding-bottom: 64px;
   }
@@ -555,8 +561,8 @@ a {
 @media (max-width: 767px) {
   /* Стили для мобильных телефонов */
   .center {
-    padding-left: calc(50% - 171.5px);
-    padding-right: calc(50% - 171.5px);
+    padding-left: calc(50% - 180px);
+    padding-right: calc(50% - 180px);
   }
   .desktop_tablet_none {
     display: block;
@@ -595,14 +601,11 @@ a {
   }
   .catalog {
     gap: 16px;
-    grid-template-columns: 359px;
-    grid-template-rows: none;
     padding-top: 65px;
     padding-bottom: 41px;
   }
   .advantages {
     gap: 46px;
-    margin-top: 96px;
     padding-top: 48px;
     padding-bottom: 81px;
   }
